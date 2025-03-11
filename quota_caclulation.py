@@ -33,12 +33,12 @@ if not is_positive_number(total_monthly_cost):
     st.write(f"The monthly revenue must be positive number. You entered '{total_monthly_cost}'")
 
 scraping_proxy_provider = st.selectbox('Which Proxy Provider will be used for Scraping?',
-                                       ('IP Royal', 'Proxy Empire', 'Proxy Seller'))
+                                       ('IP Royal', 'Proxy Empire', 'Proxy Seller'), index=2)
 redirect_proxy_provider = st.selectbox('Which Proxy Provider will be used for Redirect Scraping?',
-                                       ('IP Royal', 'Proxy Empire', 'Proxy Seller'))
+                                       ('IP Royal', 'Proxy Empire', 'Proxy Seller'), index=0)
 
-official_click_share = st.slider("What share of official ads will be clicked?", 0, 100, 10) / 100
-competitor_click_share = st.slider("What share of competitor ads will be clicked?", 0, 100, 10) / 100
+official_click_share = st.slider("What share of official ads will be clicked?", 0, 100, 0) / 100
+competitor_click_share = st.slider("What share of competitor ads will be clicked?", 0, 100, 0) / 100
 
 # Output
 if is_positive_number(total_monthly_cost):
